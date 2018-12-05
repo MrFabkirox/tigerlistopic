@@ -41,7 +41,7 @@ app.use((req, res, next) => {
       // header: res.header // to try later
     });
   }
-  console.log("_______cors_______")
+  console.log("______cors_____")
   next();
 });
 
