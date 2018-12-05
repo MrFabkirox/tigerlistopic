@@ -4,9 +4,10 @@
   "description": "A tiger list with mmongo express react node redux docker",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "server": "node server.js",
     "client": "npm start --prefix mern_client_1",
-    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix mern_client_1 && npm run build --prefix mern_client_1"
   },
   "keywords": [
