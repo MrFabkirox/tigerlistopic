@@ -29,6 +29,22 @@ mongoose.connect(
 
 mongoose.Promise = global.Promise;
 
+// handling cors error
+app.use((req, res, next) => {
+  res.header('Access-Controller-Allow-Origin', '*');
+  res.header('Access-Controller-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+  );
+  if(req.method === 'OPTIONS') {
+    res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET');
+    return res.status(200).json({
+      // header: res.header // to try later
+    });
+  }
+  console.log("_______cors_______")
+  next();
+});
+
 // use routes
 app.use('/api/items', items)
 
