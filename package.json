@@ -10,7 +10,9 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix mern_client_1 && npm run build --prefix mern_client_1"
   },
-  "keywords": ["tigerlistapeak"],
+  "keywords": [
+    "tigerlistapeak"
+  ],
   "author": "Fabrice Esope",
   "license": "MIT",
   "dependencies": {
@@ -20,7 +22,6 @@
     "mongoose": "^5.3.14"
   },
   "devDependencies": {
-    "morgan": "^1.9.1",
     "nodemon": "^1.18.7"
   }
 }
