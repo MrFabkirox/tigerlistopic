@@ -10,13 +10,22 @@ const items = require('./routes/api/items')
 // bodyParser middleware
 app.use(bodyParser.json())
 
-// db config
-const db = require('./config/keys').mongoURI
+// // db config
+// const db = require('./config/keys').mongoURI
+// 
+// // connect to mongo
+// mongoose.connect(db, { useNewUrlParser: true })
+//   .then(() => console.log('mongodb connected'))
+//   .catch(err => console.log(err))
 
-// connect to mongo
-mongoose.connect(db, { useNewUrlParser: true })
-  .then(() => console.log('mongodb connected'))
-  .catch(err => console.log(err))
+mongoose.connect(
+  'mongodb+srv://tigeradmin:'
+      + process.env.MONGO_ATLAS_PW
+      + '@tigernodesandreact-4kfsd.mongodb.net/', {
+    dbName: 'tigernodesandreact',
+    useNewUrlParser: true
+  }
+);
 
 mongoose.Promise = global.Promise;
 
