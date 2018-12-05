@@ -5,9 +5,6 @@ const path = require('path')
 
 const app = express()
 
-const morgan = require('morgan');
-app.use(morgan('dev'));
-
 const items = require('./routes/api/items')
 
 // bodyParser middleware
